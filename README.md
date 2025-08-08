@@ -4,7 +4,7 @@
 
 ### ⚙️ Pipeline de Processamento - SRC
 ### 
-**  1. read_files_by_dates_s3_uc_select_columns:**
+**1. read_files_by_dates_s3_uc_select_columns:**
 
 Lê os arquivos do bucket S3 com base em uma lista de datas (YYYYMM), e orquestra o pipeline completo:
 - Lê múltiplos arquivos Parquet no formato `yellow_tripdata_YYYY-MM.parquet`.
@@ -13,7 +13,7 @@ Lê os arquivos do bucket S3 com base em uma lista de datas (YYYYMM), e orquestr
 - Une todos os DataFrames.
 - Chama transform_data para enriquecer e limpar os dados.
 
-** 2. normalize_dataframe_columns**
+**2. normalize_dataframe_columns**
 
 Padroniza os nomes das colunas para evitar erros posteriores e garantir consistência:
 
