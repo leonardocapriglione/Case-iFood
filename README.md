@@ -75,8 +75,6 @@ imports necessários:
 
 `bucket = "landing-layer-ifood"` -- bucket que irá ler os arquivos.
 
-Execução função `main()`
-
 🛠️ Requisitos
 
 Acesso à AWS S3 com permissões de leitura
