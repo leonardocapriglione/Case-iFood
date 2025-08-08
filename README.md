@@ -1,6 +1,6 @@
 ### Case iFood
 # NYC Yellow Taxi Data - PySpark ETL
-**Este projeto realiza a extração, normalização e transformação de dados públicos de corridas de táxi de Nova York (Yellow Taxi), utilizando PySpark e arquivos armazenados em um bucket Amazon S3.**
+**Este projeto realiza a extração, normalização e transformação de dados de corridas de táxi de Nova York (Yellow Taxi), utilizando PySpark e arquivos armazenados em um bucket Amazon S3.**
 
 ### ⚙️ Pipeline de Processamento - SRC
 ### 
@@ -37,6 +37,11 @@ Extrai componentes de data e hora das colunas:
 `pickup_date, pickup_time, dropoff_date, dropoff_time`
 
 Remove colunas originais: `tpep_pickup_datetime, tpep_dropoff_datetime`
+
+**4. filter_by_pickup_datetime_range:**
+
+Limpa a base com dados fora do range necessário para a análise. 2023-01-01 à 2023-05-31.
+
 
 **Parâmetros:**
 
