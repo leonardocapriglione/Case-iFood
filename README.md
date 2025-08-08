@@ -1,12 +1,10 @@
 ### Case iFood
 # NYC Yellow Taxi Data - PySpark ETL
-**Este projeto realiza a extração, normalização e transformação de dados públicos de corridas de táxi de Nova York (Yellow Taxi), utilizando PySpark e arquivos armazenados em um bucket Amazon S3.
-**
+**Este projeto realiza a extração, normalização e transformação de dados públicos de corridas de táxi de Nova York (Yellow Taxi), utilizando PySpark e arquivos armazenados em um bucket Amazon S3.**
 
 ### ⚙️ Pipeline de Processamento - SRC
 ### 
-**  1. read_files_by_dates_s3_uc_select_columns:
-**
+**  1. read_files_by_dates_s3_uc_select_columns:**
 
 Lê os arquivos do bucket S3 com base em uma lista de datas (YYYYMM), e orquestra o pipeline completo:
 - Lê múltiplos arquivos Parquet no formato `yellow_tripdata_YYYY-MM.parquet`.
@@ -15,8 +13,7 @@ Lê os arquivos do bucket S3 com base em uma lista de datas (YYYYMM), e orquestr
 - Une todos os DataFrames.
 - Chama transform_data para enriquecer e limpar os dados.
 
-** 2. normalize_dataframe_columns
-**
+** 2. normalize_dataframe_columns**
 
 Padroniza os nomes das colunas para evitar erros posteriores e garantir consistência:
 
@@ -24,13 +21,11 @@ Padroniza os nomes das colunas para evitar erros posteriores e garantir consist�
 - Remove caracteres especiais (mantendo apenas letras, números e underscore).
 - Converte tudo para letras minúsculas.
 
-**3. transform_data:
-**
+**3. transform_data:**
 
 Enriquece e limpa os dados brutos do Yellow Taxi, adicionando colunas mais descritivas e removendo colunas técnicas:
 
-**Traduz códigos das colunas:
-**
+**Traduz códigos das colunas:**
 
 - VendorID → vendor_name
 - RatecodeID → rate_code_name
@@ -39,24 +34,21 @@ Enriquece e limpa os dados brutos do Yellow Taxi, adicionando colunas mais descr
 
 Extrai componentes de data e hora das colunas:
 
-`pickup_date, pickup_time, dropoff_date, dropoff_time
-`
+`pickup_date, pickup_time, dropoff_date, dropoff_time`
 
 Remove colunas originais: `tpep_pickup_datetime, tpep_dropoff_datetime`
 
-**Parâmetros:
-**
+**Parâmetros:**
+
 - bucket_name (str): Nome do bucket no S3.
 - dates (list[str]): Lista de datas no formato YYYYMM.
 - file_format (str): Formato dos arquivos (parquet por padrão).
 
-**Retorno:
-**
+**Retorno:**
 
 Um único DataFrame contendo todos os dados normalizados e transformados.
 
-**Exemplo de uso:
-**
+**Exemplo de uso:**
 
 Declarar variáveis globais:
 
